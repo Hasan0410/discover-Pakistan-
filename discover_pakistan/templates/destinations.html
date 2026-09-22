@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Destinations | Discover Pakistan{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="section">
+    <div class="section-heading">
+      <span class="eyebrow">Discover Pakistan Destinations</span>
+      <h2>Explore Iconic Regions & Hidden Paradises</h2>
+      <p>Discover high-altitude peaks, alpine valleys, heritage sanctuaries, and coastal beaches with verified photography and flexible itineraries.</p>
+    </div>
+
+    <!-- Destinations Grid -->
+    <div class="cards-grid">
+      {% for dest in destinations %}
+        <article class="card">
+          <div class="card-media">
+            <span class="card-badge">{{ dest.province.name }}</span>
+            {% if dest.featured_image %}
+              <img src="{{ dest.featured_image.url }}" alt="{{ dest.title }}" loading="lazy" />
+            {% else %}
+              <img src="{% static 'images/destinations/hunza-valley.jpg' %}" alt="{{ dest.title }}" loading="lazy" />
+            {% endif %}
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600; text-transform: uppercase;">{{ dest.province.name }}</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">★ {{ dest.rating }}</span>
+            </div>
+            <h3>{{ dest.title }}</h3>
+            <p>{{ dest.description }}</p>
+            <div style="font-size: 0.8rem; color: var(--text-light); margin: 0.5rem 0;">
+              <strong>Best Season:</strong> {{ dest.best_time_to_visit }}
+            </div>
+            <div class="card-footer">
+              <a href="{% url 'destinations:detail' dest.slug %}" class="text-link">View Detailed Dossier &rarr;</a>
+            </div>
+          </div>
+        </article>
+      {% empty %}
+        <p>No destinations found.</p>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Pakistan | The Ultimate Luxury Travel Portal</title>
+  <meta name="description" content="Discover Pakistan is a premium travel platform for luxury destinations, heritage resorts, guided tours, and cultural expeditions across Pakistan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Header Topbar -->
+  <header class="topbar">
+    <div class="brand-container">
+      <div class="brand-logo">
+        <img src="assets/images/logo.png" alt="Discover Pakistan Logo" />
+      </div>
+      <a class="brand-name" href="index.html">Discover Pakistan</a>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="pages/destinations.html">Destinations</a>
+      <a href="pages/hotels.html">Hotels</a>
+      <a href="pages/tours.html">Tours</a>
+      <a href="pages/blog.html">Blog</a>
+      <a href="pages/about.html">About</a>
+      <a href="pages/contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="admin/index.html" class="btn btn-outline btn-sm">Admin Portal</a>
+      <a href="pages/tours.html" class="btn btn-primary btn-sm">Plan a Journey</a>
+    </div>
+
+    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </header>
+
+  <main>
+    <!-- Hero Section with Authentic Passu Cones Panorama -->
+    <section class="hero-section" style="background-image: url('assets/images/hero/hero-pakistan.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="eyebrow">Exquisite Hospitality • Majestic Karakoram • Ancient Silk Route</span>
+        <h1>Discover Pakistan In Truly Unforgettable Luxury</h1>
+        <p class="lead-text">
+          Embark on bespoke journeys across the cathedral spires of Passu, turquoise waters of Attabad Lake, Mughal palaces of Lahore, and golden Arabian coastal cliffs with 100% flexible booking and personalized concierge service.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="pages/destinations.html" class="btn btn-primary btn-lg">Explore Real Destinations</a>
+          <a href="pages/tours.html" class="btn btn-outline btn-lg">Flexible Signature Tours</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">2,400m+</span>
+            <span class="stat-label">Alpine Elevations</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Flexible Cancellation</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">4.9/5</span>
+            <span class="stat-label">Verified Traveler Rating</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">25%</span>
+            <span class="stat-label">Deposit To Book</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-shell">
+      <!-- Flexibility Banner -->
+      <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-md); padding: 1.25rem 2rem; margin: 2rem 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div style="font-size: 2rem; background: rgba(16, 185, 129, 0.2); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">🛡️</div>
+          <div>
+            <h4 style="color: var(--emerald-primary); margin-bottom: 0.2rem; font-size: 1.1rem;">Discover Pakistan Flexibility Guarantee</h4>
+            <p style="font-size: 0.88rem; color: var(--text-light); margin: 0;">Free date changes & cancellation up to 7 days before departure. Instant weather re-routing for mountain flights.</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <span class="tag-pill" style="border-color: var(--emerald-primary); color: var(--emerald-primary);">✓ 25% Deposit Only</span>
+          <span class="tag-pill" style="border-color: var(--gold-accent); color: var(--gold-accent);">✓ Private 4x4 Prado Option</span>
+          <span class="tag-pill" style="border-color: var(--text-light); color: var(--text-light);">✓ Tailor-Made Itineraries</span>
+        </div>
+      </div>
+
+      <!-- Featured Destinations Section -->
+      <section class="section">
+        <div class="section-heading">
+          <span class="eyebrow">Curated Real Destinations</span>
+          <h2>Explore Pakistan's Most Iconic Landscapes</h2>
+          <p>Verified authentic photography and detailed travel dossiers from the Karakoram to the Arabian Sea.</p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- 1. Hunza Valley -->
+          <article class="card" data-category="mountains">
+            <div class="card-media">
+              <span class="card-badge">Alpine Paradise</span>
+              <img src="assets/images/destinations/hunza-valley.jpg" alt="Attabad Lake in Hunza Valley" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600;">Gilgit-Baltistan • 2,438m</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">★ 4.9 (128)</span>
+              </div>
+              <h3>Hunza Valley</h3>
+              <p>Turquoise waters of Attabad Lake, cathedral Passu Cones, and 700-year-old Baltit & Altit Forts flanked by Rakaposhi.</p>
+              <div style="margin: 0.75rem 0 1rem; font-size: 0.82rem; color: var(--text-light);">
+                <span style="color: var(--emerald-primary); font-weight: 600;">Best Season:</span> Apr–Oct (Blossoms & Autumn) • <strong>Airport:</strong> Gilgit (55m flight)
+              </div>
+              <div class="card-footer">
+                <a href="pages/destinations.html" class="text-link">
+                  Detailed Travel Dossier
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Skardu & Deosai -->
+          <article class="card" data-category="mountains">
+            <div class="card-media">
+              <span class="card-badge">Roof of the World</span>
+              <img src="assets/images/destinations/skardu-deosai.jpg" alt="Shangrila Resort at Lower Kachura Lake Skardu" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600;">Gilgit-Baltistan • 2,228m–4,114m</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">★ 4.9 (95)</span>
+              </div>
+              <h3>Skardu & Deosai</h3>
+              <p>Gateway to K2, mystical Katpana cold desert dunes, Shangrila pagoda chalets, and the 4,000m Deosai wilderness plateau.</p>
+              <div style="margin: 0.75rem 0 1rem; font-size: 0.82rem; color: var(--text-light);">
+                <span style="color: var(--emerald-primary); font-weight: 600;">Best Season:</span> Jun–Sep • <strong>Airport:</strong> Skardu Int'l (Direct Jet Flights)
+              </div>
+              <div class="card-footer">
+                <a href="pages/destinations.html" class="text-link">
+                  Detailed Travel Dossier
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Lahore Heritage District -->
+          <article class="card" data-category="heritage">
+            <div class="card-media">
+              <span class="card-badge">Mughal Splendor</span>
+              <img src="assets/images/destinations/lahore-heritage.jpg" alt="Badshahi Mosque in Lahore" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600;">Punjab • 217m</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">★ 4.8 (210)</span>
+              </div>
+              <h3>Lahore Heritage District</h3>
+              <p>The grand Badshahi Mosque, UNESCO Lahore Fort, frescoed Wazir Khan Mosque, and rooftop Haveli dining in the Walled City.</p>
+              <div style="margin: 0.75rem 0 1rem; font-size: 0.82rem; color: var(--text-light);">
+                <span style="color: var(--emerald-primary); font-weight: 600;">Best Season:</span> Oct–Mar • <strong>Airport:</strong> Lahore Allama Iqbal (LHE)
+              </div>
+              <div class="card-footer">
+                <a href="pages/destinations.html" class="text-link">
+                  Detailed Travel Dossier
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Gwadar & Hingol Coast -->
+          <article class="card" data-category="coastal">
+            <div class="card-media">
+              <span class="card-badge">Coastal Haven</span>
+              <img src="assets/images/destinations/gwadar-hingol.jpg" alt="Princess of Hope in Hingol National Park Balochistan" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600;">Balochistan • Sea Level</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">★ 4.7 (74)</span>
+              </div>
+              <h3>Gwadar & Hingol Coast</h3>
+              <p>Princess of Hope natural rock sculptures, Kund Malir golden beach dunes, and clifftop views overlooking the Arabian Sea.</p>
+              <div style="margin: 0.75rem 0 1rem; font-size: 0.82rem; color: var(--text-light);">
+                <span style="color: var(--emerald-primary); font-weight: 600;">Best Season:</span> Nov–Feb • <strong>Access:</strong> Makran Coastal Hwy / GWD Airport
+              </div>
+              <div class="card-footer">
+                <a href="pages/destinations.html" class="text-link">
+                  Detailed Travel Dossier
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="pages/destinations.html" class="btn btn-outline">Explore All 6 Detailed Destinations &rarr;</a>
+        </div>
+      </section>
+
+      <!-- Why Discerning Travelers Choose Us -->
+      <section class="alternate-section">
+        <div class="section-heading text-center">
+          <span class="eyebrow">The Discover Pakistan Standard</span>
+          <h2>Why Discerning Travelers Choose Us</h2>
+          <p>We redefine exploration in Pakistan with personalized concierge service, seasoned local guides, and flexible booking security.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>100% Flexible Booking</h3>
+            <p>Modify dates or cancel free up to 7 days before departure. If alpine weather blocks mountain flights, our concierge provides instant alternate routing.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏔️</div>
+            <h3>Private 4x4 Prado Expeditions</h3>
+            <p>Traverse high passes and remote riverbeds in dedicated 4x4 Prado TX/TZ or Land Cruiser vehicles with verified seasoned alpine drivers.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏰</div>
+            <h3>Heritage Forts & Luxury Stays</h3>
+            <p>Sleep in centuries-old restored royal palaces, luxury lakefront chalets, and 5-star executive suites with panoramic mountain views.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3>Customizable Travel Tiers</h3>
+            <p>Choose between Luxury Classic, Signature VIP (with personal drone videographer & private V8), or high-altitude Trekker editions.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Signature Tours Preview with Real Tour Photos -->
+      <section class="section">
+        <div class="section-heading">
+          <span class="eyebrow">Signature Tour Packages</span>
+          <h2>Handcrafted Expeditions With Total Flexibility</h2>
+          <p>Transparent pricing, 25% deposit protection, and personalized private departures.</p>
+        </div>
+
+        <div class="cards-grid-3">
+          <!-- Tour 1 -->
+          <article class="card">
+            <div class="card-media">
+              <span class="card-badge">8 Days / 7 Nights</span>
+              <img src="assets/images/tours/tour-hunza.jpg" alt="Passu Cones during Hunza Expedition" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.78rem; color: var(--gold-accent); font-weight: 600;">KARAKORAM HIGHWAY</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">★ 4.9</span>
+              </div>
+              <h3>Grand Karakoram & Hunza Expedition</h3>
+              <ul style="list-style: none; margin: 0.75rem 0 1rem; font-size: 0.85rem; color: var(--text-light);">
+                <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                  <span style="color: var(--emerald-primary);">✓</span> Serena Hunza Heritage Lodges
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                  <span style="color: var(--emerald-primary);">✓</span> Private 4x4 Prado with Fuel & Driver
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                  <span style="color: var(--emerald-primary);">✓</span> Attabad Jet-Boat & Passu Trek
+                </li>
+              </ul>
+              <div style="background: rgba(16,185,129,0.06); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--emerald-primary); margin-bottom: 1rem; border-left: 3px solid var(--emerald-primary);">
+                Free cancellation up to 7 days • 25% deposit to reserve
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="price-period">All-inclusive from</span>
+                  <div class="price-tag">PKR 175,000</div>
+                </div>
+                <button class="btn btn-primary btn-sm btn-book-trigger" data-title="Grand Karakoram & Hunza Expedition" data-price="175000">Reserve Trip</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tour 2 -->
+          <article class="card">
+            <div class="card-media">
+              <span class="card-badge">5 Days / 4 Nights</span>
+              <img src="assets/images/tours/tour-lahore.jpg" alt="Badshahi Mosque in Lahore" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.78rem; color: var(--gold-accent); font-weight: 600;">MUGHAL HERITAGE</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">★ 4.8</span>
+              </div>
+              <h3>Mughal Heritage & Food Trail</h3>
+              <ul style="list-style: none; margin: 0.75rem 0 1rem; font-size: 0.85rem; color: var(--text-light);">
+                <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                  <span style="color: var(--emerald-primary);">✓</span> Boutique Haveli Stay in Walled City
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                  <span style="color: var(--emerald-primary);">✓</span> Private Licensed Historian Escort
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                  <span style="color: var(--emerald-primary);">✓</span> Curated Old City Food Walking Tours
+                </li>
+              </ul>
+              <div style="background: rgba(16,185,129,0.06); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--emerald-primary); margin-bottom: 1rem; border-left: 3px solid var(--emerald-primary);">
+                Flexible start days • Free cancellation up to 48 hours
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="price-period">All-inclusive from</span>
+                  <div class="price-tag">PKR 98,000</div>
+                </div>
+                <button class="btn btn-primary btn-sm btn-book-trigger" data-title="Mughal Heritage & Food Trail" data-price="98000">Reserve Trip</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tour 3 -->
+          <article class="card">
+            <div class="card-media">
+              <span class="card-badge">6 Days / 5 Nights</span>
+              <img src="assets/images/tours/tour-makran.jpg" alt="Makran Coastal Highway and Hingol" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.78rem; color: var(--gold-accent); font-weight: 600;">COASTAL EXPEDITION</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">★ 4.7</span>
+              </div>
+              <h3>Makran Coastal & Gwadar Safari</h3>
+              <ul style="list-style: none; margin: 0.75rem 0 1rem; font-size: 0.85rem; color: var(--text-light);">
+                <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                  <span style="color: var(--emerald-primary);">✓</span> Zaver PC Gwadar Clifftop Stay
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                  <span style="color: var(--emerald-primary);">✓</span> Hingol Milky Way Stargazing Safari
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                  <span style="color: var(--emerald-primary);">✓</span> Speedboat Island Cruise & Fresh Catch
+                </li>
+              </ul>
+              <div style="background: rgba(16,185,129,0.06); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--emerald-primary); margin-bottom: 1rem; border-left: 3px solid var(--emerald-primary);">
+                Weekly departures or custom private dates on demand
+              </div>
+              <div class="card-footer">
+                <div>
+                  <span class="price-period">All-inclusive from</span>
+                  <div class="price-tag">PKR 125,000</div>
+                </div>
+                <button class="btn btn-primary btn-sm btn-book-trigger" data-title="Makran Coastal & Gwadar Safari" data-price="125000">Reserve Trip</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="pages/tours.html" class="btn btn-outline">Browse All 6 Signature Tours With Customizer &rarr;</a>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="section">
+        <div class="section-heading text-center">
+          <span class="eyebrow">Traveler Stories</span>
+          <h2>Voices of Our Explorers</h2>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div style="color: var(--gold-accent); font-size: 1.1rem; margin-bottom: 0.75rem;">★★★★★</div>
+            <p style="font-style: italic; margin-bottom: 1.25rem;">"Our 8-day tour of Hunza and Skardu was simply world-class. From the views at Serena Hunza to crossing the Attabad Lake, everything was flawless. When our flight had weather delays, the concierge seamlessly handled everything."</p>
+            <div>
+              <strong style="display: block; font-size: 0.95rem;">Dr. Ayesha & Salman Khan</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Dubai, UAE • Northern Expedition</span>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div style="color: var(--gold-accent); font-size: 1.1rem; margin-bottom: 0.75rem;">★★★★★</div>
+            <p style="font-style: italic; margin-bottom: 1.25rem;">"The culinary walking tour in Old Lahore paired with the heritage stay at Haveli was one of the greatest travel experiences of my life. The real historical insights were breathtaking."</p>
+            <div>
+              <strong style="display: block; font-size: 0.95rem;">Marcus Vance</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">London, UK • Mughal Heritage Trail</span>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div style="color: var(--gold-accent); font-size: 1.1rem; margin-bottom: 0.75rem;">★★★★★</div>
+            <p style="font-style: italic; margin-bottom: 1.25rem;">"Driving through Hingol National Park and watching the sunset at Kund Malir Golden Beach is something every traveler must experience. Having our own private Prado and expert driver made all the difference."</p>
+            <div>
+              <strong style="display: block; font-size: 0.95rem;">Zainab Al-Husseini</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Karachi, Pakistan • Coastal Safari</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Interactive Flexible Booking Modal -->
+  <div class="modal-backdrop" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+    <div class="modal-dialog" style="max-width: 600px;">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow" style="margin-bottom: 0.25rem;">Flexible Reservation & Customizer</span>
+          <h3 id="bookingModalTitle">Configure Experience</h3>
+        </div>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <!-- Live Dynamic Price Card -->
+      <div style="background: rgba(255,255,255,0.04); padding: 1.25rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; border: 1px solid var(--border-subtle);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.2rem;">Selected Package / Stay:</p>
+            <h4 id="bookingItemTitle" style="color: var(--gold-light); font-size: 1.15rem; margin-bottom: 0.4rem;">Grand Karakoram & Hunza Expedition</h4>
+            <span class="tag-pill" style="font-size: 0.72rem; border-color: var(--emerald-primary); color: var(--emerald-primary);">🛡️ 100% Free Cancellation (7 Days)</span>
+          </div>
+          <div style="text-align: right;">
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.2rem;">Calculated Total:</p>
+            <div style="font-size: 1.35rem; font-weight: 700; color: var(--emerald-primary);">PKR <span id="bookingCalculatedTotal">175,000</span></div>
+            <p style="font-size: 0.75rem; color: var(--text-light); margin-top: 0.2rem;">Deposit to book (25%): <strong>PKR <span id="bookingDepositAmount">43,750</span></strong></p>
+          </div>
+        </div>
+      </div>
+
+      <form id="bookingForm">
+        <input type="hidden" id="bookingItemInput" name="item" value="" />
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="bookName">Full Name *</label>
+            <input type="text" id="bookName" class="form-control" placeholder="e.g. Tariq Mehmood" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bookEmail">Email Address *</label>
+            <input type="email" id="bookEmail" class="form-control" placeholder="tariq@example.com" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="bookPhone">WhatsApp / Phone *</label>
+            <input type="tel" id="bookPhone" class="form-control" placeholder="+92 300 1234567" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bookDate">Flexible Departure Date *</label>
+            <input type="date" id="bookDate" class="form-control" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="bookGuests">Travelers Count (Dynamic Pricing)</label>
+            <select id="bookGuests" class="form-control">
+              <option value="1">1 Person (Solo Explorer)</option>
+              <option value="2" selected>2 Persons (Duo / Couple)</option>
+              <option value="3-5">3 - 5 Persons (Family / Small Group)</option>
+              <option value="6+">6+ Persons (Group Tour - 10% Discount)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bookTier">Travel Tier Option</label>
+            <select id="bookTier" class="form-control">
+              <option value="classic" selected>Luxury Classic (4-Star Inns, Shared Prado)</option>
+              <option value="vip">Signature VIP (+25% • 5-Star Serena, Private V8)</option>
+              <option value="trekker">Alpine Trekker (-12% • Cottage & Glamping)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Flexibility Add-ons Checklist -->
+        <div class="form-group" style="margin-top: 0.5rem;">
+          <label class="form-label">Flexible Add-ons & Equipment</label>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; font-size: 0.85rem; color: var(--text-light); margin-top: 0.4rem;">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" class="booking-addon-check" data-price="25000" />
+              <span>4K Drone Videographer (+25k)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" class="booking-addon-check" data-price="8000" />
+              <span>High-Altitude Oxygen Kit (+8k)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" class="booking-addon-check" data-price="15000" />
+              <span>Dedicated Historian Guide (+15k)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" class="booking-addon-check" data-price="7500" />
+              <span>Airport VIP Lounge Pass (+7.5k)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="bookRequests">Custom Route Preferences & Dietary Needs</label>
+          <textarea id="bookRequests" class="form-control" rows="2" placeholder="Tell us if you need custom dates, vegetarian/halal dining, wheelchair access, or specific photography stops..."></textarea>
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.25rem;">
+          <button type="button" class="btn btn-outline modal-cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Confirm & Reserve (25% Deposit)</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>Discover Pakistan</h4>
+        <p>The premier travel ecosystem celebrating Pakistan's majestic mountains, lush valleys, coastal highways, and rich Mughal heritage.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Exploration</h5>
+        <a href="pages/destinations.html">All Destinations</a>
+        <a href="pages/hotels.html">Luxury Stays & Resorts</a>
+        <a href="pages/tours.html">Curated Tour Packages</a>
+        <a href="pages/blog.html">Travel Stories & Guides</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company & Trust</h5>
+        <a href="pages/about.html">About Our Mission</a>
+        <a href="pages/contact.html">Concierge & Contact</a>
+        <a href="pages/privacy.html">Privacy Policy</a>
+        <a href="pages/terms.html">Terms & Conditions</a>
+      </div>
+
+      <div class="footer-col footer-newsletter">
+        <h5>Traveler Club</h5>
+        <p>Subscribe for seasonal blossom forecasts, high-altitude road alerts, and exclusive package discounts.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required aria-label="Email address" />
+          <button type="submit" class="btn btn-primary btn-sm">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Discover Pakistan Ltd. All rights reserved. Registered Tourism Operator.</div>
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="pages/privacy.html">Privacy</a>
+        <a href="pages/terms.html">Terms</a>
+        <a href="admin/index.html">Admin Portal</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/923034364467" class="nh-whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp" data-tooltip="Chat on WhatsApp"><svg aria-hidden="true" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" fill="#00c853"/><circle cx="32" cy="29" r="19" fill="none" stroke="#ffffff" stroke-width="5"/><path d="m17 43-3 10 11-4" fill="#ffffff"/><path d="M25 23c.5-.8 1.5-1 2.2-.5l3 2c.7.5.9 1.4.5 2.2l-1.5 2.1c1.8 2.8 4.1 5.1 6.9 6.9l2.1-1.5c.8-.5 1.8-.3 2.2.5l2 3c.5.7.3 1.7-.5 2.2l-1.5 1c-1.8 1.2-4 .9-5.7-.1-5.4-2.8-9.8-7.2-12.6-12.6-1-1.8-1.3-4-.1-5.7l1-1.5Z" fill="#ffffff"/></svg></a>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

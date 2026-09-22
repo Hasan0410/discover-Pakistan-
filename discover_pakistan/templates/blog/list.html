@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Travel Blog & Field Guides | Discover Pakistan{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="section">
+    <div class="section-heading">
+      <span class="eyebrow">Discover Pakistan Stories</span>
+      <h2>Travel Articles & Expedition Guides</h2>
+      <p>Expert insights, high-altitude road logs, and cultural heritage guides across Pakistan with verified photography.</p>
+    </div>
+
+    <div class="cards-grid-3">
+      {% for post in posts %}
+        <article class="card">
+          <div class="card-media">
+            <span class="card-badge">{{ post.category.name|default:"General" }}</span>
+            {% if post.cover_image %}
+              <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" loading="lazy" />
+            {% else %}
+              <img src="{% static 'images/blog/blog-kkh.jpg' %}" alt="{{ post.title }}" loading="lazy" />
+            {% endif %}
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+              <span>{{ post.published_at|date:"M d, Y" }}</span>
+              <span style="color: var(--gold-accent);">{{ post.read_time }}</span>
+            </div>
+            <h3 style="font-size: 1.25rem;">{{ post.title }}</h3>
+            <p>{{ post.summary }}</p>
+            <div class="card-footer">
+              <span style="font-size: 0.8rem; color: var(--text-light);">By {{ post.author.get_full_name|default:post.author.username }}</span>
+              <a href="{% url 'blog:detail' post.slug %}" class="text-link">Read Story &rarr;</a>
+            </div>
+          </div>
+        </article>
+      {% empty %}
+        <p>No blog posts published yet.</p>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

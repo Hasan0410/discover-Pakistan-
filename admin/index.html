@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Discover Pakistan</title>
+  <meta name="description" content="Discover Pakistan enterprise management console for bookings, tour packages, destinations, and inquiries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="../assets/images/logo.png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-container">
+      <div class="brand-logo">
+        <img src="../assets/images/logo.png" alt="Discover Pakistan Logo" />
+      </div>
+      <a class="brand-name" href="../index.html">Discover Pakistan Admin</a>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <span style="font-size: 0.85rem; color: var(--text-muted);">Operator: <strong style="color: var(--text-main);">Admin HQ (Islamabad)</strong></span>
+      <a href="../index.html" class="btn btn-outline btn-sm">Public Portal &rarr;</a>
+    </div>
+  </header>
+
+  <main class="page-shell" style="padding-top: 2rem;">
+    <div class="admin-layout">
+      <!-- Admin Navigation Sidebar -->
+      <aside class="admin-sidebar">
+        <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-accent); font-weight: 700; letter-spacing: 0.1em; padding: 0.5rem 1rem;">Management Console</div>
+        <a href="#overview" class="admin-nav-item active">
+          <span>📊</span> Overview Metrics
+        </a>
+        <a href="#bookings" class="admin-nav-item">
+          <span>📅</span> Reservations & Bookings
+        </a>
+        <a href="#destinations" class="admin-nav-item">
+          <span>🏔️</span> Destination Inventory
+        </a>
+        <a href="#tours" class="admin-nav-item">
+          <span>🧳</span> Tour Packages
+        </a>
+        <a href="#inquiries" class="admin-nav-item">
+          <span>💬</span> Inquiries & Leads
+        </a>
+        <a href="#settings" class="admin-nav-item">
+          <span>⚙️</span> System Settings
+        </a>
+      </aside>
+
+      <!-- Main Dashboard View -->
+      <section>
+        <!-- KPI Metrics Grid -->
+        <div class="admin-stats-grid">
+          <div class="admin-stat-card">
+            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Total Reservations</span>
+            <div class="value">248</div>
+            <span style="font-size: 0.78rem; color: var(--emerald-primary);">↑ 14% vs last month</span>
+          </div>
+
+          <div class="admin-stat-card">
+            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Active Expeditions</span>
+            <div class="value">18</div>
+            <span style="font-size: 0.78rem; color: var(--gold-light);">Hunza, Skardu, Fairy Meadows</span>
+          </div>
+
+          <div class="admin-stat-card">
+            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Gross Revenue</span>
+            <div class="value">PKR 42.8M</div>
+            <span style="font-size: 0.78rem; color: var(--emerald-primary);">↑ 22% Year-to-Date</span>
+          </div>
+
+          <div class="admin-stat-card">
+            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Pending Inquiries</span>
+            <div class="value">12</div>
+            <span style="font-size: 0.78rem; color: var(--rose-accent);">Action required within 4h</span>
+          </div>
+        </div>
+
+        <!-- Bookings Management Card -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem; margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h3 style="font-family: var(--font-heading); font-size: 1.4rem;">Recent Traveler Reservations</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Manage upcoming departures, passenger confirmations, and deposits.</p>
+            </div>
+
+            <!-- Table Filters -->
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <input type="text" id="adminTableSearch" class="search-input" placeholder="Search traveler, package, phone..." style="min-width: 240px; padding: 0.45rem 1rem;" />
+              <select id="adminStatusFilter" class="form-control" style="width: auto; padding: 0.45rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem;">
+                <option value="all">All Statuses</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="pending">Pending</option>
+                <option value="cancelled">Cancelled</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Traveler</th>
+                  <th>Package / Stay</th>
+                  <th>Dates</th>
+                  <th>Party</th>
+                  <th>Total Amount</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-status="confirmed">
+                  <td><strong>#DP-9041</strong></td>
+                  <td>
+                    <strong>Kamran Khan</strong><br/>
+                    <small style="color: var(--text-muted);">kamran.k@example.com</small>
+                  </td>
+                  <td>Grand Karakoram & Hunza Expedition</td>
+                  <td>May 15 – 22, 2026</td>
+                  <td>2 Persons</td>
+                  <td style="color: var(--gold-light); font-weight: 600;">PKR 350,000</td>
+                  <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="showToast('Viewing dossier for #DP-9041')">Details</button></td>
+                </tr>
+
+                <tr data-status="pending">
+                  <td><strong>#DP-9042</strong></td>
+                  <td>
+                    <strong>Sarah Ahmed</strong><br/>
+                    <small style="color: var(--text-muted);">sarah.a@example.com</small>
+                  </td>
+                  <td>Skardu & Deosai High-Altitude Safari</td>
+                  <td>June 02 – 09, 2026</td>
+                  <td>4 Persons</td>
+                  <td style="color: var(--gold-light); font-weight: 600;">PKR 640,000</td>
+                  <td><span class="status-badge status-pending">Pending Deposit</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="showToast('Invoice sent to Sarah Ahmed')">Send Invoice</button></td>
+                </tr>
+
+                <tr data-status="confirmed">
+                  <td><strong>#DP-9043</strong></td>
+                  <td>
+                    <strong>Marcus Vance</strong><br/>
+                    <small style="color: var(--text-muted);">marcus.v@london.co.uk</small>
+                  </td>
+                  <td>Mughal Heritage & Food Trail</td>
+                  <td>April 10 – 15, 2026</td>
+                  <td>1 Person</td>
+                  <td style="color: var(--gold-light); font-weight: 600;">PKR 98,000</td>
+                  <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="showToast('Viewing dossier for #DP-9043')">Details</button></td>
+                </tr>
+
+                <tr data-status="confirmed">
+                  <td><strong>#DP-9044</strong></td>
+                  <td>
+                    <strong>Zainab Al-Husseini</strong><br/>
+                    <small style="color: var(--text-muted);">zainab.h@gmail.com</small>
+                  </td>
+                  <td>Makran Coastal & Gwadar Safari</td>
+                  <td>April 18 – 24, 2026</td>
+                  <td>2 Persons</td>
+                  <td style="color: var(--gold-light); font-weight: 600;">PKR 250,000</td>
+                  <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="showToast('Viewing dossier for #DP-9044')">Details</button></td>
+                </tr>
+
+                <tr data-status="cancelled">
+                  <td><strong>#DP-9045</strong></td>
+                  <td>
+                    <strong>David Clark</strong><br/>
+                    <small style="color: var(--text-muted);">david.c@outlook.com</small>
+                  </td>
+                  <td>Swat Valley & Malam Jabba Ski Getaway</td>
+                  <td>March 01 – 05, 2026</td>
+                  <td>2 Persons</td>
+                  <td style="color: var(--gold-light); font-weight: 600;">PKR 176,000</td>
+                  <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="showToast('Refund processed')">Refund Log</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Inventory Summary -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem;">
+            <h4 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 1rem;">Destination Highlights Status</h4>
+            <ul style="list-style: none; font-size: 0.9rem; color: var(--text-light); display: flex; flex-direction: column; gap: 0.75rem;">
+              <li style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">
+                <span>Hunza Valley (Gilgit-Baltistan)</span>
+                <span class="status-badge status-confirmed">Road Open • High Demand</span>
+              </li>
+              <li style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">
+                <span>Skardu & Deosai (Gilgit-Baltistan)</span>
+                <span class="status-badge status-confirmed">Flight Ops Normal</span>
+              </li>
+              <li style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">
+                <span>Gwadar & Hingol (Balochistan)</span>
+                <span class="status-badge status-confirmed">Active Safari Season</span>
+              </li>
+            </ul>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem;">
+            <h4 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 1rem;">System & Concierge Health</h4>
+            <div style="font-size: 0.9rem; color: var(--text-light); display: flex; flex-direction: column; gap: 0.65rem;">
+              <div>🟢 <strong>NADRA e-Visa Portal Integration:</strong> Operational</div>
+              <div>🟢 <strong>Payment Gateway (1Link / Stripe / Raast):</strong> Connected</div>
+              <div>🟢 <strong>Satellite Dispatch & Alpine Rescue:</strong> Standby Ready</div>
+              <div>🟢 <strong>Database Status:</strong> Synchronized & Healthy</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+      <div>&copy; 2026 Discover Pakistan Enterprise Concierge Console. Confidential & Secure.</div>
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="../index.html">Main Website</a>
+        <a href="../pages/contact.html">Support Line</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

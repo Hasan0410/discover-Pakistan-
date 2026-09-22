@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Hotels & Heritage Resorts | Discover Pakistan</title>
+  <meta name="description" content="Discover Pakistan's finest hotels, heritage forts, lakefront chalets, and alpine ski resorts with verified authentic photography and flexible reservations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="../assets/images/logo.png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <!-- Header Topbar -->
+  <header class="topbar">
+    <div class="brand-container">
+      <div class="brand-logo">
+        <img src="../assets/images/logo.png" alt="Discover Pakistan Logo" />
+      </div>
+      <a class="brand-name" href="../index.html">Discover Pakistan</a>
+    </div>
+
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="hotels.html" class="active">Hotels</a>
+      <a href="tours.html">Tours</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="../admin/index.html" class="btn btn-outline btn-sm">Admin Portal</a>
+      <a href="tours.html" class="btn btn-primary btn-sm">Plan a Journey</a>
+    </div>
+
+    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </header>
+
+  <main class="page-shell">
+    <section class="section">
+      <div class="section-heading">
+        <span class="eyebrow">Handpicked Authentic Accommodations</span>
+        <h2>Luxury Hotels, Heritage Forts & Alpine Lodges</h2>
+        <p>Enjoy world-class hospitality, majestic views, and curated amenities across Pakistan's premier boutique stays and 5-star resorts with real photography and free cancellation.</p>
+      </div>
+
+      <!-- Filter & Search Toolbar -->
+      <div class="filter-bar">
+        <div class="filter-pills">
+          <button class="filter-btn active" data-filter="all">All Stays</button>
+          <button class="filter-btn" data-filter="mountains">Mountain Lodges</button>
+          <button class="filter-btn" data-filter="heritage">City & Heritage</button>
+          <button class="filter-btn" data-filter="coastal">Coastal Resorts</button>
+          <button class="filter-btn" data-filter="valleys">Valley Escapes</button>
+        </div>
+
+        <div class="search-input-wrap">
+          <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="search-input" placeholder="Search hotel by name or location..." aria-label="Search hotels" />
+        </div>
+      </div>
+
+      <!-- Hotels Grid -->
+      <div class="cards-grid">
+        <!-- 1. Serena Hunza -->
+        <article class="card" data-category="mountains">
+          <div class="card-media">
+            <span class="card-badge">Mountain View Luxury</span>
+            <img src="../assets/images/hotels/serena-hunza.jpg" alt="Serena Hunza Heritage Inn overlooking Baltit Fort and Rakaposhi" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600;">Karimabad, Hunza Valley</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">★ 5.0 (42 reviews)</span>
+            </div>
+            <h3>Serena Hunza Heritage Inn</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.75rem 0 1rem;">
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Ultar & Rakaposhi Views</span>
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Apricot Orchard Dining</span>
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Starlink High-Speed WiFi</span>
+            </div>
+            <div style="background: rgba(16,185,129,0.06); padding: 0.4rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--emerald-primary); margin-bottom: 1rem; border-left: 3px solid var(--emerald-primary);">
+              🛡️ Free cancellation up to 48 hours • Pay at property
+            </div>
+            <div class="card-footer">
+              <div>
+                <span class="price-period">Nightly from</span>
+                <div class="price-tag">PKR 34,000</div>
+              </div>
+              <button class="btn btn-outline btn-sm btn-book-trigger" data-title="Stay at Serena Hunza Heritage Inn" data-price="34000">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Shangrila Resort Skardu -->
+        <article class="card" data-category="mountains">
+          <div class="card-media">
+            <span class="card-badge">Iconic Lakefront Pagodas</span>
+            <img src="../assets/images/hotels/shangrila-skardu.jpg" alt="Shangrila Resort at Lower Kachura Lake Skardu" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600;">Lower Kachura Lake, Skardu</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">★ 4.9 (68 reviews)</span>
+            </div>
+            <h3>Shangrila Resort Kachura</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.75rem 0 1rem;">
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Lakefront Chalets</span>
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Private Boating Pier</span>
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Airport Shuttle (20 mins)</span>
+            </div>
+            <div style="background: rgba(16,185,129,0.06); padding: 0.4rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--emerald-primary); margin-bottom: 1rem; border-left: 3px solid var(--emerald-primary);">
+              🛡️ Instant flight delay reschedule guarantee • 100% credit
+            </div>
+            <div class="card-footer">
+              <div>
+                <span class="price-period">Nightly from</span>
+                <div class="price-tag">PKR 28,000</div>
+              </div>
+              <button class="btn btn-outline btn-sm btn-book-trigger" data-title="Stay at Shangrila Resort Kachura" data-price="28000">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Pearl Continental Lahore -->
+        <article class="card" data-category="heritage">
+          <div class="card-media">
+            <span class="card-badge">5-Star Metropolitan</span>
+            <img src="../assets/images/hotels/pc-lahore.jpg" alt="Pearl Continental Luxury Hotel Lahore" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600;">Mall Road, Lahore</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">★ 4.8 (115 reviews)</span>
+            </div>
+            <h3>Pearl Continental Luxury Hotel</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.75rem 0 1rem;">
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Executive Club Lounge</span>
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Royal Spa & Pool</span>
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Bukhara Fine Dining</span>
+            </div>
+            <div style="background: rgba(16,185,129,0.06); padding: 0.4rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--emerald-primary); margin-bottom: 1rem; border-left: 3px solid var(--emerald-primary);">
+              🛡️ No cancellation fee up to 6 PM on arrival day
+            </div>
+            <div class="card-footer">
+              <div>
+                <span class="price-period">Nightly from</span>
+                <div class="price-tag">PKR 22,000</div>
+              </div>
+              <button class="btn btn-outline btn-sm btn-book-trigger" data-title="Stay at Pearl Continental Lahore" data-price="22000">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Serena Hotel Islamabad -->
+        <article class="card" data-category="heritage">
+          <div class="card-media">
+            <span class="card-badge">Mughal Architecture</span>
+            <img src="../assets/images/hotels/serena-islamabad.jpg" alt="Serena Hotel Islamabad" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600;">Khayaban-e-Suhrawardy, Islamabad</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">★ 5.0 (98 reviews)</span>
+            </div>
+            <h3>Serena Hotel Islamabad</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.75rem 0 1rem;">
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Mughal Royal Design</span>
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Maisha Spa Treatments</span>
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Diplomatic Security</span>
+            </div>
+            <div style="background: rgba(16,185,129,0.06); padding: 0.4rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--emerald-primary); margin-bottom: 1rem; border-left: 3px solid var(--emerald-primary);">
+              🛡️ VIP Fast-track check-in • Free cancellation up to 24 hours
+            </div>
+            <div class="card-footer">
+              <div>
+                <span class="price-period">Nightly from</span>
+                <div class="price-tag">PKR 42,000</div>
+              </div>
+              <button class="btn btn-outline btn-sm btn-book-trigger" data-title="Stay at Serena Hotel Islamabad" data-price="42000">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Zaver PC Gwadar -->
+        <article class="card" data-category="coastal">
+          <div class="card-media">
+            <span class="card-badge">Clifftop Ocean View</span>
+            <img src="../assets/images/hotels/pc-gwadar.jpg" alt="Zaver Pearl Continental Hotel on Koh-e-Batil Cliffs Gwadar" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600;">Koh-e-Batil, Gwadar</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">★ 4.7 (39 reviews)</span>
+            </div>
+            <h3>Zaver Pearl Continental Gwadar</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.75rem 0 1rem;">
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">360° Arabian Sea View</span>
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Clifftop Infinity Pool</span>
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Fresh Lobster Dining</span>
+            </div>
+            <div style="background: rgba(16,185,129,0.06); padding: 0.4rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--emerald-primary); margin-bottom: 1rem; border-left: 3px solid var(--emerald-primary);">
+              🛡️ Flexible flight-arrival check-in • Free date changes
+            </div>
+            <div class="card-footer">
+              <div>
+                <span class="price-period">Nightly from</span>
+                <div class="price-tag">PKR 26,000</div>
+              </div>
+              <button class="btn btn-outline btn-sm btn-book-trigger" data-title="Stay at Zaver PC Gwadar" data-price="26000">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Malam Jabba Ski Resort -->
+        <article class="card" data-category="valleys">
+          <div class="card-media">
+            <span class="card-badge">Alpine Ski-in/Ski-out</span>
+            <img src="../assets/images/hotels/malam-jabba-resort.jpg" alt="Malam Jabba Ski Resort and chairlifts in Swat Valley" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600;">Malam Jabba, Swat Valley</span>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">★ 4.8 (56 reviews)</span>
+            </div>
+            <h3>Malam Jabba Ski Resort</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.75rem 0 1rem;">
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Direct Chairlift Access</span>
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Alpine Fireplace Lounge</span>
+              <span style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">Pine Valley Balconies</span>
+            </div>
+            <div style="background: rgba(16,185,129,0.06); padding: 0.4rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--emerald-primary); margin-bottom: 1rem; border-left: 3px solid var(--emerald-primary);">
+              🛡️ Snow-condition flexible date shifts • Family cabin options
+            </div>
+            <div class="card-footer">
+              <div>
+                <span class="price-period">Nightly from</span>
+                <div class="price-tag">PKR 25,000</div>
+              </div>
+              <button class="btn btn-outline btn-sm btn-book-trigger" data-title="Stay at Malam Jabba Ski Resort" data-price="25000">Check Availability</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Flexible Booking Modal -->
+  <div class="modal-backdrop" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+    <div class="modal-dialog" style="max-width: 600px;">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow" style="margin-bottom: 0.25rem;">Flexible Reservation & Customizer</span>
+          <h3 id="bookingModalTitle">Configure Stay</h3>
+        </div>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <!-- Live Dynamic Price Card -->
+      <div style="background: rgba(255,255,255,0.04); padding: 1.25rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; border: 1px solid var(--border-subtle);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.2rem;">Selected Luxury Property:</p>
+            <h4 id="bookingItemTitle" style="color: var(--gold-light); font-size: 1.15rem; margin-bottom: 0.4rem;">Serena Hunza Heritage Inn</h4>
+            <span class="tag-pill" style="font-size: 0.72rem; border-color: var(--emerald-primary); color: var(--emerald-primary);">🛡️ Free Cancellation Up to 48 Hours</span>
+          </div>
+          <div style="text-align: right;">
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.2rem;">Calculated Rate:</p>
+            <div style="font-size: 1.35rem; font-weight: 700; color: var(--emerald-primary);">PKR <span id="bookingCalculatedTotal">34,000</span></div>
+            <p style="font-size: 0.75rem; color: var(--text-light); margin-top: 0.2rem;">Deposit to secure: <strong>PKR <span id="bookingDepositAmount">8,500</span></strong></p>
+          </div>
+        </div>
+      </div>
+
+      <form id="bookingForm">
+        <input type="hidden" id="bookingItemInput" name="item" value="" />
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="bookName">Full Name *</label>
+            <input type="text" id="bookName" class="form-control" placeholder="e.g. Tariq Mehmood" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bookEmail">Email Address *</label>
+            <input type="email" id="bookEmail" class="form-control" placeholder="tariq@example.com" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="bookPhone">WhatsApp / Phone *</label>
+            <input type="tel" id="bookPhone" class="form-control" placeholder="+92 300 1234567" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bookDate">Check-In Date *</label>
+            <input type="date" id="bookDate" class="form-control" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="bookGuests">Guests Count</label>
+            <select id="bookGuests" class="form-control">
+              <option value="1">1 Person (Single Occupancy)</option>
+              <option value="2" selected>2 Persons (Double Room)</option>
+              <option value="3-5">3 - 5 Persons (Family Suite)</option>
+              <option value="6+">6+ Persons (Multi-Room Booking)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bookTier">Room Tier</label>
+            <select id="bookTier" class="form-control">
+              <option value="classic" selected>Deluxe Heritage Room</option>
+              <option value="vip">Executive Panoramic Suite (+25%)</option>
+              <option value="trekker">Standard Garden Cottage (-12%)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Add-ons -->
+        <div class="form-group" style="margin-top: 0.5rem;">
+          <label class="form-label">Stay Amenities & Add-ons</label>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; font-size: 0.85rem; color: var(--text-light); margin-top: 0.4rem;">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" class="booking-addon-check" data-price="7500" />
+              <span>VIP Airport Shuttle (+7.5k)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" class="booking-addon-check" data-price="12000" />
+              <span>Full-Board Gourmet Dining (+12k)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" class="booking-addon-check" data-price="15000" />
+              <span>Private Day Trek Guide (+15k)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" class="booking-addon-check" data-price="5000" />
+              <span>Late Check-Out until 6 PM (+5k)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="bookRequests">Room & Special Requests</label>
+          <textarea id="bookRequests" class="form-control" rows="2" placeholder="Mountain view preference, extra bed, dietary requests..."></textarea>
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.25rem;">
+          <button type="button" class="btn btn-outline modal-cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Reserve Room (No Prepayment)</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>Discover Pakistan</h4>
+        <p>The premier travel ecosystem celebrating Pakistan's majestic mountains, lush valleys, coastal highways, and rich Mughal heritage.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Exploration</h5>
+        <a href="destinations.html">All Destinations</a>
+        <a href="hotels.html">Luxury Stays & Resorts</a>
+        <a href="tours.html">Curated Tour Packages</a>
+        <a href="blog.html">Travel Stories & Guides</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company & Trust</h5>
+        <a href="about.html">About Our Mission</a>
+        <a href="contact.html">Concierge & Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+
+      <div class="footer-col footer-newsletter">
+        <h5>Traveler Club</h5>
+        <p>Subscribe for seasonal blossom forecasts, high-altitude road alerts, and exclusive package discounts.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required aria-label="Email address" />
+          <button type="submit" class="btn btn-primary btn-sm">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Discover Pakistan Ltd. All rights reserved. Registered Tourism Operator.</div>
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="../admin/index.html">Admin Portal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

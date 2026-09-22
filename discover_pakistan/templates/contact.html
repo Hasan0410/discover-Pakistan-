@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}VIP Concierge & Inquiries{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="section">
+    <div class="section-heading">
+      <span class="eyebrow">24/7 VIP Concierge</span>
+      <h2>Plan Your Expedition with Our Travel Architects</h2>
+      <p>Whether you're looking for a bespoke private helicopter tour, a heritage haveli honeymoon, or corporate mountain retreats, our specialists are ready to craft your itinerary.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 2.5rem; margin-bottom: 4rem;">
+      <!-- Contact Details & Offices -->
+      <div>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem;">
+            <div class="contact-card-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M3 21h18M5 21V9h14v12M3 9l9-5 9 5M8 12v5M12 12v5M16 12v5"/><path d="M4 21h16"/></svg></div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 0.5rem;">Islamabad Headquarters</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">Executive Tower, Blue Area, Islamabad, Pakistan</p>
+            <p style="font-size: 0.9rem;"><strong>Phone:</strong> +92 (51) 287-4400</p>
+            <p style="font-size: 0.9rem;"><strong>WhatsApp VIP:</strong> +92 300 855-9090</p>
+            <p style="font-size: 0.9rem;"><strong>Email:</strong> concierge@discoverpakistan.travel</p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem;">
+            <div class="contact-card-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="m3 20 7.5-13L14 13l2-3 5 10H3Z"/><path d="m10.5 14 2-3 1.5 2"/></svg></div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 0.5rem;">Gilgit & Hunza Field Base</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">Airport Road, Jutial, Gilgit, Gilgit-Baltistan</p>
+            <p style="font-size: 0.9rem;"><strong>Field Hotline:</strong> +92 (5811) 455-210</p>
+            <p style="font-size: 0.9rem;"><strong>Emergency SAR:</strong> +92 312 900-1122</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Contact Form -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-highlight); border-radius: var(--radius-md); padding: 2.25rem; box-shadow: var(--shadow-md);">
+        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.5rem;">Send an Inquiry</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Receive a customized proposal and quote within 4 business hours.</p>
+
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+                <label class="form-label" for="name">Full Name *</label>
+                <input class="form-control" type="text" id="name" required placeholder="e.g. Eleanor Vance" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="email">Email Address *</label>
+                <input class="form-control" type="email" id="email" required placeholder="eleanor@example.com" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+                <label class="form-label" for="phone">Phone / WhatsApp</label>
+                <input class="form-control" type="tel" id="phone" placeholder="+44 7700 900077" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="region">Destination of Interest</label>
+                <select class="form-control" id="region">
+                <option value="Hunza">Hunza Valley & Karakoram</option>
+                <option value="Skardu">Skardu & Deosai Plateau</option>
+                <option value="Lahore">Lahore Cultural Heritage</option>
+                <option value="Gwadar">Gwadar & Makran Coast</option>
+                <option value="Swat">Swat Valley & Kalam</option>
+                <option value="FairyMeadows">Fairy Meadows & Nanga Parbat</option>
+                <option value="Multiple">Multi-Region Grand Expedition</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Your Travel Vision & Special Requests</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Mention preferred dates, guest count, private jet charter requests, high-altitude dietary preferences..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.85rem;">Send VIP Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

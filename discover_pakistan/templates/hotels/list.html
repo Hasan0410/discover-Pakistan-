@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Hotels & Resorts | Discover Pakistan{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="section">
+    <div class="section-heading">
+      <span class="eyebrow">Accommodations</span>
+      <h2>Luxury Stays & Alpine Resorts</h2>
+      <p>Handpicked heritage inns, 5-star city hotels, and serene lakefront chalets across Pakistan with verified photography and free cancellation.</p>
+    </div>
+
+    <div class="cards-grid">
+      {% for hotel in hotels %}
+        <article class="card">
+          <div class="card-media">
+            <span class="card-badge">★ {{ hotel.rating }}</span>
+            {% if hotel.image %}
+              <img src="{{ hotel.image.url }}" alt="{{ hotel.name }}" loading="lazy" />
+            {% else %}
+              <img src="{% static 'images/hotels/serena-hunza.jpg' %}" alt="{{ hotel.name }}" loading="lazy" />
+            {% endif %}
+          </div>
+          <div class="card-body">
+            <span style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600;">{{ hotel.destination.title }}</span>
+            <h3 style="margin-top: 0.25rem;">{{ hotel.name }}</h3>
+            <p>{{ hotel.description }}</p>
+            <div style="background: rgba(16,185,129,0.06); padding: 0.35rem 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--emerald-primary); margin: 0.75rem 0; border-left: 2px solid var(--emerald-primary);">
+              🛡️ Free cancellation up to 48 hours • Pay at property
+            </div>
+            <div class="card-footer">
+              <div>
+                <span class="price-period">Per night starting</span>
+                <div class="price-tag">PKR {{ hotel.price_per_night|floatformat:0 }}</div>
+              </div>
+              <a href="{% url 'bookings:create' %}" class="btn btn-primary btn-sm">Reserve Stay</a>
+            </div>
+          </div>
+        </article>
+      {% empty %}
+        <p>No hotels found.</p>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

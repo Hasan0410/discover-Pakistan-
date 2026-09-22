@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tour Packages | Discover Pakistan{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="section">
+    <div class="section-heading">
+      <span class="eyebrow">Signature Journeys</span>
+      <h2>Curated Tour Packages Across Pakistan</h2>
+      <p>All-inclusive guided itineraries tailored for comfort, authenticity, and total flexibility with verified photography.</p>
+    </div>
+
+    <!-- Flexibility Highlights Ribbon -->
+    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-md); padding: 1rem 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span style="font-size: 1.5rem;">🛡️</span>
+        <span style="font-size: 0.9rem; color: var(--text-light);"><strong>Book With Peace of Mind:</strong> Free cancellation up to 7 days, 25% deposit only, and automatic weather flight protection.</span>
+      </div>
+      <div style="display: flex; gap: 0.5rem;">
+        <span class="tag-pill" style="font-size: 0.72rem; border-color: var(--emerald-primary); color: var(--emerald-primary);">Private 4x4 Prado</span>
+        <span class="tag-pill" style="font-size: 0.72rem; border-color: var(--gold-accent); color: var(--gold-accent);">VIP Tier Options</span>
+      </div>
+    </div>
+
+    <div class="cards-grid-3">
+      {% for pkg in packages %}
+        <article class="card">
+          <div class="card-media">
+            <span class="card-badge">{{ pkg.duration_days }} Days / {{ pkg.duration_days|add:"-1" }} Nights</span>
+            {% if pkg.featured_image %}
+              <img src="{{ pkg.featured_image.url }}" alt="{{ pkg.title }}" loading="lazy" />
+            {% else %}
+              <img src="{% static 'images/tours/tour-hunza.jpg' %}" alt="{{ pkg.title }}" loading="lazy" />
+            {% endif %}
+          </div>
+          <div class="card-body">
+            <h3>{{ pkg.title }}</h3>
+            <p>{{ pkg.description }}</p>
+            <div style="background: rgba(16,185,129,0.06); padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--emerald-primary); margin: 0.75rem 0; border-left: 2px solid var(--emerald-primary);">
+              🛡️ 100% Free cancellation up to 7 days • 25% deposit to reserve
+            </div>
+            <div class="card-footer">
+              <div>
+                <span class="price-period">All-inclusive from</span>
+                <div class="price-tag">PKR {{ pkg.price|floatformat:0 }}</div>
+              </div>
+              <a href="{% url 'packages:detail' pkg.slug %}" class="btn btn-primary btn-sm">Configure Package</a>
+            </div>
+          </div>
+        </article>
+      {% empty %}
+        <p>No tour packages available.</p>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

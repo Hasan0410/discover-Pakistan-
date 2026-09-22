@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Traveler Dashboard | Discover Pakistan{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="section">
+    <div class="section-heading">
+      <span class="eyebrow">Traveler Account</span>
+      <h2>Welcome Back, {{ user.first_name|default:user.username }}</h2>
+      <p>View your upcoming expeditions, booking history, and active concierge requests.</p>
+    </div>
+
+    <!-- User KPI Metrics -->
+    <div class="admin-stats-grid">
+      <div class="admin-stat-card">
+        <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Total Bookings</span>
+        <div class="value">{{ bookings|length }}</div>
+        <span style="font-size: 0.78rem; color: var(--emerald-primary);">Verified Traveler</span>
+      </div>
+
+      <div class="admin-stat-card">
+        <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Curated Destinations</span>
+        <div class="value">{{ total_destinations }}</div>
+        <span style="font-size: 0.78rem; color: var(--gold-light);">Available for Booking</span>
+      </div>
+
+      <div class="admin-stat-card">
+        <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Active Tour Packages</span>
+        <div class="value">{{ total_packages }}</div>
+        <span style="font-size: 0.78rem; color: var(--emerald-primary);">Instant Reservation</span>
+      </div>
+    </div>
+
+    <!-- Booking History Table -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.75rem;">
+      <h3 style="font-family: var(--font-heading); font-size: 1.35rem; margin-bottom: 1.25rem;">My Reservations & Dossiers</h3>
+      
+      {% if bookings %}
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Package / Stay</th>
+                <th>Departure Date</th>
+                <th>Party Size</th>
+                <th>Total Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for b in bookings %}
+                <tr>
+                  <td><strong>#{{ b.booking_id }}</strong></td>
+                  <td>{{ b.package.title|default:b.custom_title }}</td>
+                  <td>{{ b.departure_date }}</td>
+                  <td>{{ b.travelers_count }} Persons</td>
+                  <td style="color: var(--gold-light); font-weight: 600;">PKR {{ b.total_price|floatformat:0 }}</td>
+                  <td>
+                    <span class="status-badge {% if b.status == 'confirmed' %}status-confirmed{% elif b.status == 'pending' %}status-pending{% else %}status-cancelled{% endif %}">
+                      {{ b.get_status_display }}
+                    </span>
+                  </td>
+                  <td>
+                    <a href="{% url 'bookings:detail' b.booking_id %}" class="btn btn-outline btn-sm">View Details</a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% else %}
+        <div style="text-align: center; padding: 2.5rem; color: var(--text-muted);">
+          <p style="margin-bottom: 1rem;">You don't have any reservations yet.</p>
+          <a href="{% url 'packages:list' %}" class="btn btn-primary btn-sm">Explore Tour Packages</a>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+</main>
+{% endblock %}

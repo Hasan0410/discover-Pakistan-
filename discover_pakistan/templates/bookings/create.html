@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Booking{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="section">
+    <div class="section-heading">
+      <span class="eyebrow">Reserve Your Journey</span>
+      <h2>Start a Booking Request</h2>
+      <p>Choose a package or describe a custom trip. Our team will confirm availability and pricing before any payment is requested.</p>
+    </div>
+
+    <form method="post" class="card" style="max-width: 900px; margin: 0 auto;">
+      {% csrf_token %}
+      <div class="card-body">
+        {% if form.non_field_errors %}
+          <div class="form-feedback feedback-error" role="alert">{{ form.non_field_errors }}</div>
+        {% endif %}
+        <div class="form-row">
+          {% for field in form %}
+            <div class="form-group">
+              <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} *{% endif %}</label>
+              {{ field }}
+              {% for error in field.errors %}<div class="form-feedback feedback-error">{{ error }}</div>{% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Booking Request</button>
+      </div>
+    </form>
+  </section>
+</main>
+{% endblock %}

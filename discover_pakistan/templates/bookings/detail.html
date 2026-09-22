@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Reservation #{{ booking.booking_id }} | Discover Pakistan{% endblock %}
+
+{% block content %}
+<main class="page-shell" style="max-width: 700px; margin: 3rem auto;">
+  <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 2.5rem;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <span class="eyebrow">Booking Dossier</span>
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem;">Reference #{{ booking.booking_id }}</h2>
+      </div>
+      <span class="status-badge {% if booking.status == 'confirmed' %}status-confirmed{% elif booking.status == 'pending' %}status-pending{% else %}status-cancelled{% endif %}" style="font-size: 0.9rem; padding: 0.4rem 1rem;">
+        {{ booking.get_status_display }}
+      </span>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 1.5rem; line-height: 2; font-size: 0.95rem;">
+      <div><strong>Primary Passenger:</strong> {{ booking.customer_name }}</div>
+      <div><strong>Email:</strong> {{ booking.customer_email }}</div>
+      <div><strong>Phone / WhatsApp:</strong> {{ booking.customer_phone }}</div>
+      <div><strong>Expedition:</strong> {{ booking.package.title|default:booking.custom_title }}</div>
+      <div><strong>Travel Date:</strong> {{ booking.departure_date }}</div>
+      <div><strong>Travelers:</strong> {{ booking.travelers_count }} Persons</div>
+      <div><strong>Total Amount:</strong> <strong style="color: var(--gold-light);">PKR {{ booking.total_price|floatformat:0 }}</strong></div>
+      {% if booking.special_requests %}
+        <div><strong>Special Requests:</strong> {{ booking.special_requests }}</div>
+      {% endif %}
+    </div>
+
+    <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+      {% if booking.status == 'pending' %}
+        <a href="{% url 'payments:checkout' booking.booking_id %}" class="btn btn-primary">Pay Deposit Online</a>
+      {% endif %}
+      <a href="{% url 'dashboard:home' %}" class="btn btn-outline">Back to Dashboard</a>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient (Emerald to Golden Amber) -->
+    <linearGradient id="logoBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="45%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#eab308" />
+    </linearGradient>
+
+    <!-- Inner Shadow & Subtle Sheen Filter -->
+    <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#059669" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Base with Glow -->
+  <rect x="32" y="32" width="448" height="448" rx="120" ry="120" fill="url(#logoBgGrad)" filter="url(#logoGlow)" />
+
+  <!-- Mountain Peak / Geometric Layered Emblem -->
+  <!-- Top Diamond Peak -->
+  <polygon points="256,120 376,190 256,260 136,190" fill="#061a12" />
+
+  <!-- Middle Floating Wing / Layer -->
+  <polygon points="256,268 360,225 330,270 256,325 182,270 152,225" fill="#061a12" />
+
+  <!-- Bottom Foundation / Base Layer -->
+  <polygon points="256,335 340,290 310,335 256,390 202,335 172,290" fill="#061a12" />
+</svg>

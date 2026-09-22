@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Search Results | Discover Pakistan{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="section">
+    <div class="section-heading">
+      <span class="eyebrow">Search Query</span>
+      <h2>Results for "{{ query }}"</h2>
+      <p>Found {{ total_results }} matching destinations, luxury stays, and tour packages.</p>
+    </div>
+
+    <!-- Search input -->
+    <form method="get" action="{% url 'search:query' %}" style="margin-bottom: 2.5rem; max-width: 500px;">
+      <div class="search-input-wrap">
+        <input type="text" name="q" value="{{ query }}" class="search-input" placeholder="Search another keyword..." />
+      </div>
+    </form>
+
+    {% if destinations %}
+      <h3 style="font-family: var(--font-heading); margin-bottom: 1.25rem;">Destinations ({{ destinations|length }})</h3>
+      <div class="cards-grid" style="margin-bottom: 3rem;">
+        {% for dest in destinations %}
+          <article class="card">
+            <div class="card-media">
+              <span class="card-badge">{{ dest.province.name }}</span>
+              {% if dest.featured_image %}
+                <img src="{{ dest.featured_image.url }}" alt="{{ dest.title }}" loading="lazy" />
+              {% else %}
+                <img src="{% static 'images/destinations/hunza-valley.jpg' %}" alt="{{ dest.title }}" loading="lazy" />
+              {% endif %}
+            </div>
+            <div class="card-body">
+              <h3>{{ dest.title }}</h3>
+              <p>{{ dest.description }}</p>
+              <div class="card-footer">
+                <a href="{% url 'destinations:detail' dest.slug %}" class="text-link">View Destination &rarr;</a>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if packages %}
+      <h3 style="font-family: var(--font-heading); margin-bottom: 1.25rem;">Tour Packages ({{ packages|length }})</h3>
+      <div class="cards-grid-3" style="margin-bottom: 3rem;">
+        {% for pkg in packages %}
+          <article class="card">
+            <div class="card-media">
+              <span class="card-badge">{{ pkg.duration_days }} Days</span>
+              {% if pkg.featured_image %}
+                <img src="{{ pkg.featured_image.url }}" alt="{{ pkg.title }}" loading="lazy" />
+              {% else %}
+                <img src="{% static 'images/tours/tour-hunza.jpg' %}" alt="{{ pkg.title }}" loading="lazy" />
+              {% endif %}
+            </div>
+            <div class="card-body">
+              <h3>{{ pkg.title }}</h3>
+              <p>{{ pkg.description }}</p>
+              <div class="card-footer">
+                <div class="price-tag">PKR {{ pkg.price|floatformat:0 }}</div>
+                <a href="{% url 'packages:detail' pkg.slug %}" class="btn btn-primary btn-sm">View Package</a>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if total_results == 0 %}
+      <div style="text-align: center; padding: 3rem; color: var(--text-muted);">
+        <p>No results found matching "{{ query }}". Try searching for "Hunza", "Skardu", "Lahore", or "Safari".</p>
+      </div>
+    {% endif %}
+  </section>
+</main>
+{% endblock %}

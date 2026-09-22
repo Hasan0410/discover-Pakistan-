@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ destination.title }} | Discover Pakistan{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <nav style="margin-bottom: 1.5rem; font-size: 0.88rem; color: var(--text-muted);">
+    <a href="{% url 'core:home' %}" style="color: var(--text-light);">Home</a> / 
+    <a href="{% url 'destinations:list' %}" style="color: var(--text-light);">Destinations</a> / 
+    <span style="color: var(--gold-accent);">{{ destination.title }}</span>
+  </nav>
+
+  <!-- Destination Hero Header with Real Photo -->
+  <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 3rem; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg);">
+    <div style="height: 420px; background: url('{% if destination.featured_image %}{{ destination.featured_image.url }}{% else %}{% static "images/destinations/hunza-valley.jpg" %}{% endif %}') center/cover no-repeat; position: relative;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 21, 16, 0.2) 0%, rgba(7, 21, 16, 0.85) 85%, var(--bg-dark) 100%);"></div>
+      <div style="position: absolute; bottom: 2rem; left: 2rem; right: 2rem; z-index: 2;">
+        <span class="eyebrow">{{ destination.province.name }}</span>
+        <h1 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 0.75rem;">{{ destination.title }}</h1>
+        <p style="color: var(--text-light); max-width: 750px; font-size: 1.05rem;">{{ destination.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; margin-bottom: 4rem;">
+    <div>
+      <section style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 2rem; margin-bottom: 2rem;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem;">Historical & Regional Insight</h2>
+        <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem;">
+          {{ destination.history|default:destination.description }}
+        </p>
+        
+        <div style="background: rgba(255,255,255,0.03); padding: 1rem 1.5rem; border-radius: var(--radius-sm); border-left: 3px solid var(--gold-accent); margin-bottom: 1.5rem;">
+          <strong>Best Time to Visit:</strong> {{ destination.best_time_to_visit|default:"April to October" }}
+        </div>
+
+        <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-sm); padding: 1rem;">
+          <h4 style="color: var(--emerald-primary); margin-bottom: 0.35rem; font-size: 0.95rem;">🛡️ Flexibility Guarantees:</h4>
+          <p style="font-size: 0.85rem; color: var(--text-light); margin: 0;">Free cancellation up to 7 days before departure. Instant weather re-routing for mountain flights. 25% advance deposit only.</p>
+        </div>
+      </section>
+
+      <!-- Associated Hotels -->
+      {% if destination.hotels.all %}
+        <section style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 2rem;">
+          <h2 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1.5rem;">Recommended Stays</h2>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            {% for h in destination.hotels.all %}
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 1rem; border-radius: var(--radius-sm); display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                  {% if h.image %}
+                    <img src="{{ h.image.url }}" alt="{{ h.name }}" style="width: 70px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                  {% endif %}
+                  <div>
+                    <h4>{{ h.name }}</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">PKR {{ h.price_per_night|floatformat:0 }} / night • ★ {{ h.rating }}</p>
+                  </div>
+                </div>
+                <a href="{% url 'hotels:detail' h.pk %}" class="btn btn-outline btn-sm">View Hotel</a>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+    </div>
+
+    <!-- Booking Sidebar -->
+    <aside>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-highlight); border-radius: var(--radius-md); padding: 2rem; position: sticky; top: 100px;">
+        <span class="eyebrow">Trip Planner</span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem;">Book {{ destination.title }}</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+          Customized luxury private tours with 4x4 Prado, certified guides, and flexible booking protection.
+        </p>
+
+        <a href="{% url 'packages:list' %}" class="btn btn-primary" style="width: 100%; margin-bottom: 0.75rem; text-align: center;">View Tour Packages</a>
+        <a href="{% url 'core:contact' %}" class="btn btn-outline" style="width: 100%; font-size: 0.88rem; text-align: center;">Speak to Concierge</a>
+
+        <div style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; text-align: center;">
+          ✓ Includes verified luxury lodging<br/>
+          ✓ 100% money-back weather reschedule guarantee<br/>
+          ✓ 25% deposit to reserve
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+{% endblock %}

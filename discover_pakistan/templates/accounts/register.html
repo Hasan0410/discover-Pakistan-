@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Traveler Registration | Discover Pakistan{% endblock %}
+
+{% block content %}
+<main class="page-shell" style="max-width: 540px; margin: 3rem auto;">
+  <div style="background: var(--bg-card); border: 1px solid var(--border-highlight); border-radius: var(--radius-md); padding: 2.5rem; box-shadow: var(--shadow-md);">
+    <span class="eyebrow" style="margin-bottom: 0.5rem;">Join the Club</span>
+    <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">Create Account</h2>
+    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">Sign up to unlock bespoke itineraries and exclusive concierge booking access.</p>
+
+    <form method="post">
+      {% csrf_token %}
+      
+      {% for field in form %}
+        <div class="form-group">
+          <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {{ field }}
+          {% if field.errors %}
+            <div style="color: var(--rose-accent); font-size: 0.8rem; margin-top: 0.25rem;">
+              {{ field.errors.0 }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 0.5rem;">Register Account</button>
+    </form>
+
+    <div style="margin-top: 1.5rem; text-align: center; font-size: 0.88rem; color: var(--text-muted);">
+      Already registered? <a href="{% url 'accounts:login' %}" style="color: var(--gold-accent); font-weight: 600;">Sign In</a>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register</title>
+  <style>body{font-family:Arial,sans-serif;background:#07110d;color:#f5f3eb;padding:2rem;} form{max-width:420px;background:#103224;padding:1.5rem;border-radius:16px;} input{display:block;width:100%;margin:0.5rem 0 1rem;padding:0.7rem;border-radius:8px;}</style>
+</head>
+<body>
+  <h1>Create an account</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>

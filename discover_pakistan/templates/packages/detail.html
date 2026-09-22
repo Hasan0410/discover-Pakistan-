@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ package.title }} | Discover Pakistan{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <nav style="margin-bottom: 1.5rem; font-size: 0.88rem; color: var(--text-muted);">
+    <a href="{% url 'core:home' %}" style="color: var(--text-light);">Home</a> / 
+    <a href="{% url 'packages:list' %}" style="color: var(--text-light);">Tours</a> / 
+    <span style="color: var(--gold-accent);">{{ package.title }}</span>
+  </nav>
+
+  <!-- Tour Banner with Real Photo -->
+  <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2.5rem; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-lg);">
+    <div style="height: 380px; background: url('{% if package.featured_image %}{{ package.featured_image.url }}{% else %}{% static "images/tours/tour-hunza.jpg" %}{% endif %}') center/cover no-repeat; position: relative;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 21, 16, 0.2) 0%, rgba(7, 21, 16, 0.85) 85%, var(--bg-dark) 100%);"></div>
+      <div style="position: absolute; bottom: 2rem; left: 2rem; right: 2rem; z-index: 2;">
+        <span class="eyebrow">{{ package.duration_days }} Days / {{ package.duration_days|add:"-1" }} Nights Expedition</span>
+        <h1 style="font-family: var(--font-heading); font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 0.5rem;">{{ package.title }}</h1>
+        <span class="tag-pill" style="border-color: var(--emerald-primary); color: var(--emerald-primary);">🛡️ 100% Free Cancellation Up to 7 Days</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; margin-bottom: 4rem;">
+    <div>
+      <section style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 2rem; margin-bottom: 2rem;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem;">Expedition Overview</h2>
+        <p style="color: var(--text-light); line-height: 1.7; font-size: 1.05rem; margin-bottom: 1.5rem;">
+          {{ package.description }}
+        </p>
+
+        <h3 style="font-size: 1.15rem; color: var(--gold-light); margin-bottom: 0.75rem;">Destinations Covered:</h3>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+          {% for d in package.destinations.all %}
+            <span style="background: rgba(255,255,255,0.06); padding: 0.35rem 0.85rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle); font-size: 0.85rem;">{{ d.title }}</span>
+          {% endfor %}
+        </div>
+
+        <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-sm); padding: 1.25rem;">
+          <h4 style="color: var(--emerald-primary); margin-bottom: 0.5rem; font-size: 1rem;">🛡️ Included Flexibility Guarantees:</h4>
+          <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.88rem; color: var(--text-light); line-height: 1.6;">
+            <li>Free cancellation or date change up to 7 days before departure.</li>
+            <li>Only 25% deposit required to secure reservation; balance payable upon arrival.</li>
+            <li>Automatic alternate routing or trip extension credit in case of mountain flight weather cancellations.</li>
+            <li>Choice of vehicle: Private 4x4 Prado TX or VIP Land Cruiser upgrades.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Booking Card -->
+    <aside>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-highlight); border-radius: var(--radius-md); padding: 2rem; position: sticky; top: 100px;">
+        <span class="eyebrow">All-Inclusive Guarantee</span>
+        <div class="price-tag" style="font-size: 1.8rem; margin: 0.5rem 0 0.5rem;">PKR {{ package.price|floatformat:0 }}</div>
+        <p style="font-size: 0.82rem; color: var(--text-light); margin-bottom: 1.25rem;">Deposit to reserve: <strong>PKR {{ package.price|floatformat:0 }} (25% at checkout)</strong></p>
+        
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">
+          Includes luxury boutique lodging, heated 4x4 transport with fuel, national park entry fees, and certified guides.
+        </p>
+
+        <a href="{% url 'bookings:create' %}?package={{ package.id }}" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 0.75rem;">Reserve This Journey</a>
+        <a href="{% url 'core:contact' %}" class="btn btn-outline" style="width: 100%; text-align: center; font-size: 0.88rem;">Speak to Concierge</a>
+
+        <div style="margin-top: 1.5rem; font-size: 0.78rem; color: var(--text-muted); text-align: center; line-height: 1.4;">
+          ✓ 100% Free Cancellation (7 Days)<br/>
+          ✓ Instant Weather Reschedule Protection
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+{% endblock %}

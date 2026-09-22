@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# Django local files
+discover_pakistan/db.sqlite3
+discover_pakistan/media/
+discover_pakistan/staticfiles/
+*.log
+
+# Environment and secrets
+.env
+*.pem
+*.key
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# PHP local/runtime files
+.phpunit.result.cache

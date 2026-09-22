@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Reservation Confirmation | Discover Pakistan{% endblock %}
+
+{% block content %}
+<main class="page-shell" style="max-width: 640px; margin: 3rem auto;">
+  <div style="background: var(--bg-card); border: 1px solid var(--emerald-primary); border-radius: var(--radius-md); padding: 2.5rem; text-align: center; box-shadow: var(--shadow-lg);">
+    <div style="width: 60px; height: 60px; background: rgba(16, 185, 129, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--emerald-primary); font-size: 2rem;">
+      ✓
+    </div>
+
+    <span class="eyebrow" style="margin-bottom: 0.5rem;">Booking Received</span>
+    <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 0.5rem;">Reservation Confirmed!</h2>
+    <p style="color: var(--text-light); margin-bottom: 1.5rem;">Your booking reference is <strong style="color: var(--gold-light);">#{{ booking.booking_id }}</strong></p>
+
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.25rem; text-align: left; margin-bottom: 1.5rem; font-size: 0.9rem; line-height: 1.8;">
+      <div><strong>Traveler:</strong> {{ booking.customer_name }}</div>
+      <div><strong>Package:</strong> {{ booking.package.title|default:booking.custom_title }}</div>
+      <div><strong>Departure Date:</strong> {{ booking.departure_date }}</div>
+      <div><strong>Party Size:</strong> {{ booking.travelers_count }} Persons</div>
+      <div><strong>Estimated Total:</strong> <span style="color: var(--gold-light); font-weight: 700;">PKR {{ booking.total_price|floatformat:0 }}</span></div>
+    </div>
+
+    <div style="display: flex; gap: 1rem; justify-content: center;">
+      <a href="{% url 'core:home' %}" class="btn btn-outline">Return to Home</a>
+      <a href="{% url 'payments:checkout' booking.booking_id %}" class="btn btn-primary">Proceed to Secure Checkout</a>
+    </div>
+  </div>
+</main>
+{% endblock %}

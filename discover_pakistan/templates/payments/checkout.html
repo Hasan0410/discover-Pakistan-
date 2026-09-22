@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Checkout #{{ booking.booking_id }} | Discover Pakistan{% endblock %}
+
+{% block content %}
+<main class="page-shell" style="max-width: 580px; margin: 3rem auto;">
+  <div style="background: var(--bg-card); border: 1px solid var(--border-highlight); border-radius: var(--radius-md); padding: 2.5rem; box-shadow: var(--shadow-md);">
+    <span class="eyebrow" style="margin-bottom: 0.5rem;">Payment Request</span>
+    <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">Request Payment Verification</h2>
+    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">A payment provider is not connected yet. Submitting this form records a pending payment request for concierge verification.</p>
+
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 1.25rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; line-height: 1.8;">
+      <div><strong>Booking Ref:</strong> #{{ booking.booking_id }}</div>
+      <div><strong>Package:</strong> {{ booking.package.title|default:booking.custom_title }}</div>
+      <div><strong>Total Amount:</strong> <strong style="color: var(--gold-light); font-size: 1.2rem;">PKR {{ booking.total_price|floatformat:0 }}</strong></div>
+    </div>
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label class="form-label">Select Payment Method</label>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.5rem;">
+          <label style="display: flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.04); padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); cursor: pointer;">
+            <input type="radio" name="method" value="card" checked />
+            <span>International Credit / Debit Card (Visa, MasterCard, Amex)</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.04); padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); cursor: pointer;">
+            <input type="radio" name="method" value="1link" />
+            <span>1Link / Raast Instant Bank Transfer</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.04); padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); cursor: pointer;">
+            <input type="radio" name="method" value="cash" />
+            <span>Concierge Cash Settlement Upon VIP Arrival</span>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1rem;">Submit Payment Request</button>
+    </form>
+  </div>
+</main>
+{% endblock %}
