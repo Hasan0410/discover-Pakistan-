@@ -1,0 +1,10 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "pip install -r discover_pakistan/requirements.txt && cd discover_pakistan && python manage.py collectstatic --noinput"
+
+[deploy]
+startCommand = "cd discover_pakistan && python manage.py migrate && gunicorn discover_pakistan.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --access-logfile - --error-logfile -"
+healthcheckPath = "/"
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3

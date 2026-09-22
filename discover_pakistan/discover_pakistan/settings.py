@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 from urllib.parse import urlparse
+from django.core.exceptions import ImproperlyConfigured
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -14,8 +15,12 @@ def env_bool(name, default=False):
 SECRET_KEY = os.getenv('SECRET_KEY', 'development-only-key-change-before-deployment-7f4b2a9c1d8e6f3a')
 ENVIRONMENT = os.getenv('ENVIRONMENT', 'development').lower()
 IS_PRODUCTION = ENVIRONMENT == 'production'
+if IS_PRODUCTION and not os.getenv('SECRET_KEY'):
+    raise ImproperlyConfigured('SECRET_KEY must be set when ENVIRONMENT=production.')
 DEBUG = env_bool('DEBUG', not IS_PRODUCTION)
 ALLOWED_HOSTS = [host.strip() for host in os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost,testserver').split(',') if host.strip()]
+if IS_PRODUCTION and not os.getenv('ALLOWED_HOSTS'):
+    raise ImproperlyConfigured('ALLOWED_HOSTS must be set when ENVIRONMENT=production.')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -45,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -113,6 +119,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
